@@ -22,4 +22,4 @@ A dynamic social media web application that allows users to upload and delete ph
 
 This webpage is deployed to GitHub Pages
 
-- Deployment Link : https://github.com/elsherer/se_project_spots.git
+- [Deployment Link](https://elsherer.github.io/se_project_spots/)
