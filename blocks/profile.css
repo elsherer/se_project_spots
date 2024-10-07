@@ -1,7 +1,8 @@
 .profile {
   display: flex;
-  padding: 24px 0 20px;
+  padding: 34px 0 20px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
+  justify-content: center;
 }
 .profile__avatar {
   margin-right: 20px;
@@ -14,7 +15,7 @@
   font-size: 32px;
   line-height: 1;
   color: rgba(33, 33, 33, 1);
-  gap: 12px;
+
   font-weight: 500;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -22,7 +23,7 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
-  margin: 0;
+  margin: 0 0 12px;
 }
 .profile__description {
   margin: 0;

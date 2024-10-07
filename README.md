@@ -26,4 +26,4 @@ This webpage is deployed to GitHub Pages
 
 ## Video
 
-- I will add my video soon im just unsure if I made the correct corrections to my project so I want to finish that before uploading
+- Video Link: (https://drive.google.com/file/d/1Ky134a34rUjinDFWpWpkdL4M_h5UIjDF/view?usp=sharing)
