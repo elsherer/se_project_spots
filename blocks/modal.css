@@ -11,17 +11,21 @@
   justify-content: center;
   visibility: hidden;
   padding: 0 20px;
+  transition: visibility 0s 0.3s, opacity 0.3s ease-in;
+  opacity: 0;
 }
 
 .modal_opened {
   visibility: visible;
+  transition: visibility 0s 0s, opacity 0.3s ease-in;
+  opacity: 1;
 }
 
 .modal__container {
   background: #fff;
   padding: 32px 50px;
   max-width: 730px;
-  width: 100%;
+
   box-sizing: border-box;
   position: relative;
   border-radius: 8px;
@@ -33,9 +37,12 @@
   border: none;
   margin: 0;
   display: flex;
-
-  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
 }
 .modal__image {
   object-fit: contain;
@@ -54,7 +61,6 @@
   border-radius: 8px;
   padding: 4px 8px;
   margin: 8px 0 0;
-  align-self: flex-start;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -65,8 +71,8 @@
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 32px;
-  right: 50px;
+  top: 12px;
+  right: 12px;
   width: 40px;
   height: 40px;
   opacity: 0.4;
@@ -79,14 +85,15 @@
 .modal__close-btn_type_preview {
   background-image: url("../images/close-btn-preview.svg");
   top: 0;
-  right: 34px;
+  right: unset;
+  left: calc(100% + 12.5px);
   position: absolute;
   opacity: 1;
 
   border: none;
   transition: opacity 0.5s;
 }
-.modal__close-btn_type_previe:hover {
+.modal__close-btn_type_preview:hover {
   opacity: 0.4;
   cursor: pointer;
 }
@@ -133,6 +140,7 @@
   color: rgba(252, 245, 229, 1);
   border-radius: 8px;
   border: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 627px) {
   .modal {
@@ -148,8 +156,7 @@
   }
 
   .modal__close-btn {
-    top: 12px;
-    right: 12px;
+    cursor: pointer;
   }
 
   .modal__input {
@@ -160,5 +167,24 @@
   }
   .modal__submit-btn {
     width: 100%;
+    cursor: pointer;
+  }
+
+  .modal__image {
+    max-width: 90vw;
+    border-radius: 4px;
+  }
+  .modal__container_type_preview {
+    padding: 0;
+  }
+  .modal__caption {
+    font-size: 16px;
+    line-height: 1.225;
+  }
+  .modal__close-btn_type_preview {
+    bottom: calc(100% + 8px);
+    top: unset;
+    right: 0;
+    left: unset;
   }
 }
