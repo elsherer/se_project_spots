@@ -138,7 +138,7 @@ previewModalCloseBtn.addEventListener("click", () => {
 
 closeButtons.forEach((button) => {
   const popup = button.closest(".modal");
-  button.addEventListener("click", () => closePopup(popup));
+  button.addEventListener("click", () => closeModal(popup));
 });
 
 initialCards.forEach((item) => {
