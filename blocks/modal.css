@@ -173,7 +173,7 @@
   }
 
   .modal__image {
-    max-width: 90vw;
+    max-width: 288px;
     border-radius: 4px;
   }
   .modal__container_type_preview {
@@ -183,7 +183,7 @@
     font-size: 16px;
     line-height: 1.225;
     margin: 8.43px 0 0;
-    max-width: 288px;
+    max-width: 200px;
   }
   .modal__close-btn_type_preview {
     bottom: calc(100% + 8px);
