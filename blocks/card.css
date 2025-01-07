@@ -73,7 +73,7 @@
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
-
+    border-radius: 4px;
     margin: 0;
     box-sizing: border-box;
   }
