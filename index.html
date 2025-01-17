@@ -63,7 +63,7 @@
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit profile</h2>
-          <form name="edit-profile" class="modal__form">
+          <form name="edit-profile" class="modal__form" novalidate>
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -72,7 +72,11 @@
                 class="modal__input"
                 placeholder="Type your name"
                 name="name"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -82,7 +86,14 @@
                 class="modal__input"
                 placeholder="Describe yourself"
                 name="description"
+                minlength="2"
+                maxlength="200"
+                required
               />
+              <span
+                id="profile-description-input-error"
+                class="modal__error"
+              ></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -93,7 +104,12 @@
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New post</h2>
-          <form name="edit-profile" class="modal__form" id="add-card-form">
+          <form
+            name="edit-profile"
+            class="modal__form"
+            id="add-card-form"
+            novalidate
+          >
             <label for="add-card-link-input" class="modal__label">
               Image link
               <input
@@ -102,7 +118,9 @@
                 class="modal__input"
                 placeholder="Paste a link to the picture"
                 name="link"
+                required
               />
+              <span id="add-card-link-input-error" class="modal__error"></span>
             </label>
             <label for="add-card-name-input" class="modal__label">
               Caption
@@ -112,7 +130,11 @@
                 class="modal__input"
                 placeholder="Type your caption"
                 name="name"
+                minlength="2"
+                maxlength="30"
+                required
               />
+              <span id="add-card-name-input-error" class="modal__error"></span>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
@@ -131,7 +153,7 @@
         </div>
       </div>
     </div>
-
+    <script defer src="./scripts/validation.js"></script>
     <script defer src="./scripts/index.js"></script>
   </body>
 </html>

@@ -40,6 +40,7 @@ const editModalDescriptionInput = editModal.querySelector(
 
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
+const cardSubmitBtn = cardModal.querySelector(".modal__submit-btn");
 const cardModalCloseBtn = cardModal.querySelector(".modal__close-btn");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
@@ -52,6 +53,7 @@ const previewModalCloseBtn = previewModal.querySelector(
 );
 
 const closeButtons = document.querySelectorAll(".modal__close-btn");
+const closeOverlayModal = document.querySelectorAll(".modal");
 
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
@@ -94,15 +96,18 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
+  disableButton(cardSubmitBtn);
   closeModal(cardModal);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", escapeCloseModal);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", escapeCloseModal);
 }
 
 function handleEditFormSubmit(evt) {
@@ -112,9 +117,20 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
+function escapeCloseModal(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
+}
+
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(editFormElement, [
+    editModalNameInput,
+    editModalDescriptionInput,
+  ]);
   openModal(editModal);
 });
 
@@ -133,4 +149,13 @@ closeButtons.forEach((button) => {
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
+});
+
+closeOverlayModal.forEach((modal) => {
+  modal.addEventListener("click", function (evt) {
+    const isOutside = evt.target.classList.contains("modal");
+    if (isOutside) {
+      closeModal(modal);
+    }
+  });
 });
