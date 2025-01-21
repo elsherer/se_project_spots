@@ -33,9 +33,9 @@
 
 .modal__container_type_preview {
   padding: 0;
+  margin: 0;
   background-color: transparent;
   border: none;
-  margin: 0;
   display: flex;
   position: relative;
   flex-wrap: wrap;
@@ -86,7 +86,7 @@
   background-image: url("../images/close-btn-preview.svg");
   top: 0;
   right: unset;
-  left: calc(100% + 12.5px);
+  left: calc(73vh + 12.5px);
   position: absolute;
   opacity: 1;
 
