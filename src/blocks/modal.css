@@ -44,6 +44,15 @@
   align-items: flex-start;
   align-content: center;
 }
+
+.modal__container_type_delete {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .modal__image {
   object-fit: contain;
   max-width: 80vw;
@@ -97,12 +106,24 @@
   opacity: 0.4;
   cursor: pointer;
 }
+
+.modal__close-btn_type_delete {
+  background-image: url("../images/close-btn-preview.svg");
+  top: 1.5px;
+  right: -52px;
+  position: absolute;
+  opacity: 100%;
+}
 .modal__title {
   margin: 0 0 32px;
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
   color: rgba(33, 33, 33, 1);
+}
+
+.modal__title-delete {
+  font-size: 24px;
 }
 
 .modal__label {
@@ -155,8 +176,31 @@
   border: none;
   cursor: pointer;
 }
+
 .modal__submit-btn:hover {
   background-color: rgba(33, 33, 33, 0.8);
+}
+
+.modal__submit-btn_type_delete {
+  background-color: rgba(255, 101, 101, 1);
+  color: rgba(33, 33, 33, 1);
+}
+
+.modal__submit-btn_type_delete:hover {
+  background-color: rgba(255, 51, 51, 1);
+  opacity: 100%;
+}
+
+.modal__submit-btn_type_cancel {
+  margin-left: 20px;
+  background-color: transparent;
+  border: 1px solid rgba(33, 33, 33, 1);
+  color: rgba(33, 33, 33, 1);
+}
+.modal__submit-btn_type_cancel:hover {
+  background-color: rgba(33, 33, 33, 1);
+  opacity: 100%;
+  color: rgba(255, 255, 255, 1);
 }
 
 .modal__submit-btn_type_error {
@@ -165,7 +209,7 @@
 
 @media screen and (max-width: 627px) {
   .modal {
-    padding: 0 16px;
+    padding: 0 10px;
     background-color: rgba(0, 0, 0, 0.8);
   }
 
@@ -173,13 +217,24 @@
     padding: 12px 12px;
     max-width: 300px;
   }
+
   .modal__title {
     font-size: 20px;
     margin: 10px 0 34px;
   }
 
+  .modal__title-delete {
+    line-height: 1.2;
+    margin: 0px, 0px, 20px;
+  }
+
   .modal__close-btn {
     cursor: pointer;
+  }
+
+  .modal__close-btn_type_delete {
+    top: -58px;
+    right: 0px;
   }
 
   .modal__input {
@@ -206,10 +261,22 @@
     margin: 8.43px 0 0;
     max-width: 200px;
   }
+
   .modal__close-btn_type_preview {
     bottom: calc(100% + 8px);
     top: unset;
     right: 0;
     left: unset;
+  }
+
+  .modal__submit-btn_type_cancel {
+    margin-left: 0px;
+    margin-top: 12px;
+    width: 156px !important;
+    height: 52px;
+  }
+  .modal__submit-btn_type_delete {
+    width: 156px !important;
+    height: 52px;
   }
 }
